@@ -75,6 +75,36 @@ function congrats() {
 	document.getElementById('popup').appendChild(congratsH1)
 }
 
+//audio function
+function toggleAudio() {
+  var audioElement = document.getElementById('player')
+  var soundOn = document.getElementById('play')
+  var soundOff = document.getElementById('pause')
+  if (audioElement.paused) {
+    audioElement.play();
+    $(soundOn).show();
+    $(soundOff).hide();
+  } else {
+    audioElement.pause();
+    $(soundOn).hide();
+    $(soundOff).show();
+  }
+} 
+
+$(document).ready(function() {
+  var playing = false;
+  $('#play').click(function() {
+    $(this).toggleClass('down');
+    if (playing == false) {
+      document.getElementById('player').play();
+      playing = true;
+    } else {
+      document.getElementById('player').pause();
+      playing = false;
+    }
+  })
+})
+
 //fireworks function
 function fireworks() {
   var SCREEN_WIDTH = window.innerWidth,

@@ -76,3 +76,16 @@ canvas {
 	top: 75px;
 	left: 0;
 }
+/* audio */
+#play,
+#pause {
+	float: left;
+	width: 40px;
+}
+#play:hover,
+#pause:hover {
+	cursor: pointer;
+}
+#pause {
+	display: none;
+}
